@@ -24,6 +24,11 @@ export function Home() {
           <Text style={style.textButton}>+</Text>
         </TouchableOpacity>
       </View>
+
+      <Text style ={style.listTitle}>Compras pendentes</Text>
+      <View style={style.list}>
+      <Text style={style.listEmpytText}>Comprou todos os produtos? Adicione produtos a sua lista de compras</Text>
+      </View>
     </View>
   )
 }
@@ -58,7 +63,9 @@ const style = StyleSheet.create({
   form: {
     width: "100%",
     flexDirection: "row",
-    marginTop: 18
+    marginTop: 18,
+
+    marginBottom: 36
   },
   button: {
     width: 56,
@@ -71,5 +78,21 @@ const style = StyleSheet.create({
   textButton: {
     color: "#fff",
     fontSize: 24, 
+  },
+  listTitle: {
+    fontSize : 20,
+    fontWeight: 'bold',
+    lineHeight: 24,
+    marginBottom: 16
+  },
+  listEmpytText: {
+    fontSize: 16,
+    fontWeight: "normal",
+    lineHeight: 19.2,
+    textAlign: 'center'
+  },
+  list: {
+    flex: 1,
+    justifyContent: 'center'
   }
 })

@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native"
+import { FlatList, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native"
 import { Product } from "../components/Product"
 
 export function Home() {
@@ -77,15 +77,23 @@ const products = [
         {/* <Text style={style.listEmpytText}>Comprou todos os produtos? Adicione produtos a sua lista de compras</Text> */}
        
 
-      <ScrollView>
+      {/* <ScrollView>
          {
         products.map((product) =>  <Product key={product} name={product} onRevome={() => handleProductRemove(product)}/> ) 
         }
-      </ScrollView>
+      </ScrollView> */}
+
+      <FlatList>
+        data={products}
+        keyExtractor={(item) => item}
+        renderItem={({item}) => <Product name={item} onRevome ={() => handleProductRemove(item)}
+        showsVerticalScrollIndicator={false}
+        ListEmpytComponent={() => (
+          <Text style={style.listEmpytText}>Comprou todos os produtos? Adicione produtos a sua lista de compras</Text> */}
+        )}
+      </FlatList>
      
       </View>
-
-      
     </View>
   )
 }

@@ -28,6 +28,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         borderBottomLeftRadius: 5,
         borderTopLeftRadius: 5,
+        marginBottom: 8
     },
     name:{
         flex: 1,

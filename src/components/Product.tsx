@@ -2,17 +2,17 @@ import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
 interface Props {
   name: string;
-  onRevome: () => void; 
+  onRemove: () => void; 
 }
 
-export function Product({name, onRevome}: Props){
+export function Product({name, onRemove}: Props){
     return(
         <View style ={styles.container}>
             <Text style={styles.name}>{name} </Text>
 
             <TouchableOpacity
             style={styles.button} 
-            onPress={onRevome}>
+            onPress={onRemove}>
 
               <Text style={styles.buttonText}>-</Text>
             </TouchableOpacity>

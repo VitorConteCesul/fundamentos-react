@@ -1,9 +1,11 @@
 import { useState } from "react"
 import { FlatList, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native"
-import { Product } from "../components/Product"
+import {Product}  from "../components/Product"
+
+
 
 export function Home() {
-const products = [
+    const products = [
     "Arroz",
     "Feijão",
     "Macarrão",
@@ -47,11 +49,11 @@ const products = [
   ];
 
   function handleAddProduct(){
-    
+
   }
 
   function handleProductRemove(name: String){
-    console.log(`Você clicou no botão de remover Produto ${name}`)
+    console.log(`Você clicou no botão de remover Produto ${name}`) 
   }
 
   return (
@@ -74,25 +76,27 @@ const products = [
       <Text style ={style.listTitle}>Compras pendentes</Text>
 
       <View style={style.list}>
-        {/* <Text style={style.listEmpytText}>Comprou todos os produtos? Adicione produtos a sua lista de compras</Text> */}
-       
+      { /*<Text style={style.listEmpytText}>Comprou todos os produtos? Adicione produtos a sua lista de compras</Text> */}
 
-      {/* <ScrollView>
-         {
-        products.map((product) =>  <Product key={product} name={product} onRevome={() => handleProductRemove(product)}/> ) 
-        }
-      </ScrollView> */}
 
-      <FlatList>
+    {/* <ScrollView>
+    {   
+        products.map((product) => <Product key = {product} name = {product} onRemove={() => handleProductRemove(product)}/>)
+    }
+    </ScrollView> */}
+
+    <FlatList
         data={products}
         keyExtractor={(item) => item}
-        renderItem={({item}) => <Product name={item} onRevome ={() => handleProductRemove(item)}
+        renderItem={({item}) => <Product name = {item} onRemove={() => handleProductRemove(item)} />}
         showsVerticalScrollIndicator={false}
-        ListEmpytComponent={() => (
-          <Text style={style.listEmpytText}>Comprou todos os produtos? Adicione produtos a sua lista de compras</Text> */}
-        )}
-      </FlatList>
-     
+        ListEmptyComponent={() => (<Text style={style.listEmpytText}>
+            Comprou todos os produtos? Adicione produtos a sua lista de compras
+            </Text>
+            )}
+    />
+
+
       </View>
     </View>
   )

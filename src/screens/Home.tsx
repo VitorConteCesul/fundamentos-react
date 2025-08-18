@@ -73,7 +73,7 @@ export function Home() {
         </TouchableOpacity>
       </View>
 
-      <Text style ={style.listTitle}>Compras pendentes</Text>
+      
 
       <View style={style.list}>
       { /*<Text style={style.listEmpytText}>Comprou todos os produtos? Adicione produtos a sua lista de compras</Text> */}
@@ -85,9 +85,12 @@ export function Home() {
     }
     </ScrollView> */}
 
+    <Text style ={style.listTitle}>Compras pendentes</Text>
+
     <FlatList
         data={products}
         keyExtractor={(item) => item}
+        contentContainerStyle={style.list}
         renderItem={({item}) => <Product name = {item} onRemove={() => handleProductRemove(item)} />}
         showsVerticalScrollIndicator={false}
         ListEmptyComponent={() => (<Text style={style.listEmpytText}>
@@ -152,16 +155,16 @@ const style = StyleSheet.create({
     fontSize : 20,
     fontWeight: 'bold',
     lineHeight: 24,
-    marginBottom: 16
+    marginBottom: 16,
   },
   listEmpytText: {
     fontSize: 16,
     fontWeight: "normal",
     lineHeight: 19.2,
-    textAlign: 'center'
+    textAlign: 'center',
   },
   list: {
-    flex: 1,
+    flexGrow: 1,
     justifyContent: 'center'
   }
 })

@@ -1,10 +1,16 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Alert, FlatList, FlatListComponent, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native"
 import { Product } from "../../components/Product"
 
 import { style } from "./styles";
 
 export function Home() {
+  const [value, setValue] = useState('');
+
+  useEffect(() => {
+    Alert.alert
+  })
+  
   const products = [
     "Arroz",
     "Feijão",
